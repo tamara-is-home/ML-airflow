@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "sound-potion-312013",
+  "private_key_id": "6ddcdd6d2c3615a5314905eb88718dc2e064afec",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDS+/yp9H17KE2n\nLnbdYsjRnXd8AarmPHhpbSdhhuUhrCPwNgZ/ham1kTZ+VJHI8CPh9jIZqG/IGX5A\ngOP3dYKMVVYM6XbAnZJe8xPasL7EPRPL7xfU+ocZMTsP10CxIRQBTxVq5aMW8+Qj\nd58lV58ETf/5SGZaB+INKD/8WBDckZpbxndWGeq36C0lD14r1vDbAXkUWhTSs91g\n/V2oUYisp+VmVzoFeudGnqDpL0wHKgtKhZntGfuGwdXAicj0koeckYGxU8gQqA3q\nG2ahgYDWpF0p3rjr1ZZaSbAsjZIb8KpHK7ZRvvFAbgGO61//gQs5b6plhMe/DVT0\nwDmkDnmxAgMBAAECggEAGVb7cHF1VVfbWmNvEkV9h14euM2TItuLaLob5eTnhc+g\nx1vDFF4k1QeaSw+e13UuvMJZdRHGTyWaBLxA5Pp/ke7j4AwgNPUX3ICHAhfX6Ztz\np7rRGsV2JAqbedppTNIuDr7apyqVF7ogzI5e664Q4q74OePoqxJ8TgaSB3Lk9OCY\nmLZschiygPOFG2/Mr6PQqsjRhof2tZtEAWn6XRYBhN3O9LB4z/RxlrdrhFuX8kAh\nPHp/4+ccLmsZOhDIE5eXWlht9X6Ug6qBYCfyUlJsdhhTiKEA9zQ/oE7ghVk0Ac76\neS4yilKyMCCjcmTjjFLSML9V0CviG84JJ846NghuiwKBgQD8EY1Br0vP7e4+HkYI\nRCr+DG/CY9fdoRmKn+IZlSwZKvR2uBtyZgpF79CvmUBrlE2HHrmgiM6KwXJFugXQ\nKImvxpd3J8ThzxbNjW/KNSDD5ECBx/n/0VqX5LMbM8AW4SFjqCPLsP9Foc+6c+UT\nOGdvZdfiLAYMtJUiudrbge6zMwKBgQDWRmVW1KHBVp6Ah0ZPQBqQCjJSelGpH0ry\nAw9Qs+j4cPe1//fVB8i9uiSCBIi0TBy9hfHq3LxRIpGq+LK0MpkkWwGJ8No4Aegq\nFrvYtrP2bTOIhi2Lzq1FOUn+d1svy780k4GsQ0+i8QXbrbIlg79gYFPsu3hK64CP\nwHxZEUAfiwKBgQCn/JqDF+wSWqLXyx0pDSUJwggJKLkH/wEinYL1QbDt5O6e3/uK\nte5KxZPyMtP33hH85sEW95WOa3VYeqy9GQcJmfP/eQWA555uxr+lptp7Mna7BybZ\nEhCqAcRLcKWnmcnCvJ9+dCrroPbrb6lOsdxdJSZGmMg/V2m8htgQSftmeQKBgB/0\n07xFbfJVpsHoatX663s76hFe6LreTeEWD7yreD1FK8xa5m1BAfE5x6QUZQbuqwKg\n7VlnnjZDf5IOESjKuwgvAmW+I+1ia2uLhGxnoyNHWf4sdLJ7GmBOkPiAeHsCWfvP\nW/GDAGd+pq8CkqUBpxMKirmto90Yjk3iGSl3ZybNAoGBAIMkfqAFDx7xD8WOpUTd\ne4fN9gGeAre3+2Ym3DeB+rZZL/uqpeqPgTW0w3TLMJZQMTQduMUPb8wSu6Z+iplb\ndE0sDUhkk6Z+WDx/qQaw5Q7OyPQd0Q8ia7FMGWgUpAqB8ka3gah0S4O8d/yDVucs\nbvFgt8EcS9luc9yhVk70nUFa\n-----END PRIVATE KEY-----\n",
+  "client_email": "for-ml-proj@sound-potion-312013.iam.gserviceaccount.com",
+  "client_id": "109311855706667851448",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/for-ml-proj%40sound-potion-312013.iam.gserviceaccount.com"
+}
