@@ -2,7 +2,7 @@ import os
 from google.cloud import bigquery
 import pandas as pd
 
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "sound-potion-312013-6ddcdd6d2c36.json"
+
 
 SQL = """WITH sent AS (
         SELECT 
@@ -22,7 +22,7 @@ SQL = """WITH sent AS (
             max(t.block_timestamp) as last_trx_date_out
         FROM `bigquery-public-data.crypto_bitcoin.transactions` as t, 
         UNNEST(inputs) as i
-        WHERE t.block_timestamp >'{0}'
+        WHERE t.block_timestamp between '{0}' and '{1}'
         GROUP BY 1
     ),   
     received AS (
@@ -38,7 +38,7 @@ SQL = """WITH sent AS (
             max(t.is_coinbase) as has_coinbase
         FROM `bigquery-public-data.crypto_bitcoin.transactions` as t, 
         UNNEST(outputs)as o
-        WHERE t.block_timestamp > '{1}'
+        WHERE t.block_timestamp between '{2}' and '{3}'
         GROUP BY 1
     )
     
@@ -71,13 +71,49 @@ SQL = """WITH sent AS (
     GROUP BY 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22
 """
 
+R_SQL = """
+    SELECT 
+        TIMESTAMP_TRUNC(t.block_timestamp, HOUR) as date_hour,
+        ARRAY_TO_STRING(o.addresses, '') as address,
+        sum(o.value) / 100000000 as sum
+    FROM `bigquery-public-data.crypto_bitcoin.transactions` as t, 
+    UNNEST(outputs)as o
+    WHERE t.block_timestamp between '{0}' and '{1}'
+    GROUP BY 1, 2
+"""
 
-def get_data_for_date(date: str):
+S_SQL = """
+SELECT 
+        TIMESTAMP_TRUNC(t.block_timestamp, HOUR) as date_hour,
+        ARRAY_TO_STRING(i.addresses, '') as address,
+        sum(i.value) / 100000000 as sum
+    FROM `bigquery-public-data.crypto_bitcoin.transactions` as t, 
+    UNNEST(inputs) as i
+    WHERE t.block_timestamp between '{0}' and '{1}'
+    GROUP BY 1, 2
+"""
+
+def get_all_data_for_date(date: str, date_end:str):
     bq_client = bigquery.Client()
-    query = SQL.format(date, date)
+    query = SQL.format(date, date_end, date, date_end)
+    print('start collecting data..')
     dataframe = bq_client.query(query).result().to_dataframe()
+    print('all data has been loaded')
     return dataframe
 
+def get_sent_for_date(date: str, date_end:str):
+    bq_client = bigquery.Client ()
+    query = S_SQL.format(date, date_end)
+    print ('start collecting data..')
+    dataframe = bq_client.query(query).result().to_dataframe()
+    print ('sent data has been loaded')
+    return dataframe
 
-df = get_data_for_date('2021-07-01')
-print(df.head(1), df.shape[0])
+def get_received_for_date(date: str, date_end:str):
+    bq_client = bigquery.Client()
+    query = R_SQL.format( date, date_end)
+    print ('start collecting data..')
+    dataframe = bq_client.query(query).result().to_dataframe()
+    print ('received data has been loaded')
+    return dataframe
+
