@@ -7,7 +7,7 @@ from airflow.operators.python_operator import PythonOperator
 from utils.bq_data_extraction import get_all_data_for_date
 from utils.data_transformation import transform
 from utils.model_evaluation import predict
-#from utils.telegram import send_message
+from utils.telegram import send_message
 
 
 def combine_all():
@@ -16,7 +16,7 @@ def combine_all():
     data_raw = get_all_data_for_date(yesterday, today)
     data_transformed = transform(data_raw, yesterday, today)
     prediction = predict(data_transformed)
-    #send_message(prediction)
+    send_message(prediction)
 
 dag_name = Path(__file__).stem
 
